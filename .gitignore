@@ -1,4 +1,5 @@
 # Dependências
 node_modules
 
-tmp/app.db
+# Database
+db/app.db
