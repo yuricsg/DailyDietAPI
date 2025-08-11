@@ -1,34 +1,28 @@
 import fastify from 'fastify'
+import cookie from '@fastify/cookie'
 import crypto from 'node:crypto'
 import { db } from './database.js'
 import knex from 'knex'
 import { title } from 'node:process'
 import { email, uuid } from 'zod'
+import { env } from './env/index.js'
+import { usersRoutes } from './routes/users.js'
+import { mealsRoutes } from './routes/meals.js'
 
 const app = fastify()
 
-app.get('/run', async ()=>{
-    const users = await db('users').select('*')
+app.register(cookie)
 
-    return users
-
+app.register(usersRoutes, {
+    prefix: 'users',
 })
 
-// app.get('/run', async ()=> {
-//     const meal = await db('meals').insert({
-//         id: crypto.randomUUID(),
-//         user_id: '1',
-//         nome_da_refeicao: 'Almoço',
-//         descricao: 'Frango com legumes',
-//         esta_em_dieta: true,
-//         data: new Date(),
-//     })
-
-//     return meal
-// })
+app.register(mealsRoutes, {
+    prefix: 'meals',
+})
 
 app.listen({
-    port:3333,
+    port: env.PORT,
 }).then(() => {
-    console.log('Server rodando...')
+    console.log('Server HTTP rodando...')
 }) 
