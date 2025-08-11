@@ -14,10 +14,10 @@ Desafio técnico do curso de NodeJS da plataforma Rocketseat, para testar meus c
 .
 ├── src/
 │   ├── server.ts        # Ponto de entrada da aplicação
-│   ├── routes/          # Rotas HTTP
-│   ├── database/        # Configuração do Knex e migrations
-│   └── controllers/     # Lógica das requisições
-├── db/                  # Arquivos do banco de dados (SQLite)
+│   ├── routes/          # Rotas HTTP        
+│   ├─── env/            # Variáveis de ambiente
+    └── middlewares/    # Lógica das requisições
+├── db/                  # Arquivos do banco de dados e migrations (SQLite)
 ├── knexfile.ts          # Configuração do Knex
 ├── package.json
 └── README.md
