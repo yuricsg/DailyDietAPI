@@ -1,13 +1,30 @@
 # DailyDietAPI
 
-This is a simple Node.js application built with TypeScript. It serves as a starting point for building applications using Node.js and TypeScript.
+Desafio técnico do curso de NodeJS da plataforma Rocketseat, para testar meus conhecimento na criação básica de APIs Rest. O desafio consiste em uma API onde o usuário irá registrar todas as suas refeições do dia para ter um controle sobre elas, simulando um aplicativo de nutricionistas.
 
-## Prerequisites
+## Tecnologias utilizadas:
+- Node.js
+- Fastify
+- TypeScript
+- Knex.js
+- SQLite (padrão, mas pode usar PostgreSQL, MySQL, etc.)
 
-- Node.js (version 12 or higher)
-- npm (Node package manager)
+## Estrutura da aplicação
+```
+.
+├── src/
+│   ├── server.ts        # Ponto de entrada da aplicação
+│   ├── routes/          # Rotas HTTP
+│   ├── database/        # Configuração do Knex e migrations
+│   └── controllers/     # Lógica das requisições
+├── db/                  # Arquivos do banco de dados (SQLite)
+├── knexfile.ts          # Configuração do Knex
+├── package.json
+└── README.md
+````
+  
 
-## Installation
+## Instalação
 
 1. Clone the repository:
 
@@ -15,37 +32,18 @@ This is a simple Node.js application built with TypeScript. It serves as a start
    git clone <repository-url>
    ```
 
-2. Navigate to the project directory:
+2. Navegue até o diretório do repositório:
 
    ```
    cd my-node-ts-app
    ```
 
-3. Install the dependencies:
+3. Instale as dependências:
 
    ```
    npm install
    ```
 
-## Configuration
+## Configuratção
 
-The project is configured using TypeScript. The configuration file is located at `tsconfig.json`. You can modify the compiler options as needed.
-
-## Running the Application
-
-To start the application, use the following command:
-
-```
-npm start
-```
-
-This will compile the TypeScript files and start the Node.js server.
-
-## Scripts
-
-- `npm start`: Compiles the TypeScript files and runs the application.
-- `npm run build`: Compiles the TypeScript files without running the application.
-
-## License
-
-This project is licensed under the MIT License.
+O projeto está usando TypeScript como padrão. Então você precisará instalar o ``tsconfig.json``
